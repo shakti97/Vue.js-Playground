@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vuejs Playground</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src=''></script>
+</head>
+<body>
+    <div id="app">
+        <div class='jumbotron'>
+            <h2 style='text-align: center'><strong>Todo List</strong></h2>
+        </div>
+        <div class="container">
+            <div>
+                <input v-model='task' class='form-control' >
+                <br>
+                <center><button v-on:click='addTask' class='btn btn-primary' style='width: 20%'><strong>{{button}}</strong></button></center>
+            </div>
+            <br>
+            <div style='border: 5px solid grey; border-radius : 20px'>
+                <br>
+                <ol style='color: red'>
+                    <li v-for='todo in todos'  >
+                        <div class='row'>
+                            <span class='col-md-8'>{{todo.text}}</span><span class='col-md-1'><img src="https://fixmywp.com/wp-content/uploads/2013/07/mass-delete-wordpress-comments.png" style='width: 30px; height:15px' v-on:click='deleteTask(todo.text)' alt="Delete Task"></span><span class='col-md-1'><img src="https://image.flaticon.com/icons/svg/61/61456.svg" style='width: 30px; height:15px' v-on:click='editTask(todo.text)' alt="Edit Task">
+                            </span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+      </div>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script src="index.js"></script>
+</body>
+</html>
